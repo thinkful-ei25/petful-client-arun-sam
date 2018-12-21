@@ -4,11 +4,12 @@ import './index.css';
 import Dashboard from './components/Dashboard';
 import * as serviceWorker from './serviceWorker';
 import store from './store';
-
-const state = store.getState();
+import {Provider} from 'react-redux';
 
 ReactDOM.render(
-  <Dashboard catToAdopt={state.cat.cat} dogToAdopt={state.dog.dog} />,
+  <Provider store={store}>
+    <Dashboard/>
+  </Provider>,
   document.getElementById('root')
 );
 
