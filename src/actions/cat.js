@@ -44,7 +44,7 @@ const adoptCatFailure = (error) => ({
 
 export const adoptCat = () => (dispatch) => {
   dispatch(adoptCatRequest());
-  return fetch(`${API_BASE_URL}/api/dog`, {
+  return fetch(`${API_BASE_URL}/api/cat`, {
     method: 'DELETE'
   })
     .then(()=>dispatch(adoptCatSuccess()))
