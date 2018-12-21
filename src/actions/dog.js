@@ -2,7 +2,7 @@ import { API_BASE_URL } from '../config';
 
 export const FETCH_DOG_REQUEST = 'FETCH_DOG_REQUEST';
 const fetchDogRequest = () => ({
-  type: FETCH_DOG,
+  type: FETCH_DOG_REQUEST,
 });
 
 export const FETCH_DOG_SUCCESS = 'FETCH_DOG_SUCCESS';
