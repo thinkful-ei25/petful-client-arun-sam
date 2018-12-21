@@ -10,6 +10,12 @@ import {
 } from '../../actions';
 
 export class Dashboard extends React.Component {
+  componentDidMount() {
+    const {fetchDog, fetchCat} = this.props;
+    fetchDog();
+    fetchCat();
+  }
+
   render() {
     const { catToAdopt, dogToAdopt, onAdoptDog, onAdoptCat } = this.props;
     return (
@@ -26,12 +32,12 @@ const mapStateToProps = (state) => ({
   dogToAdopt: state.dog.dog,
 });
 
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = {
   fetchDog: fetchDogAction,
   fetchCat: fetchCatAction,
   onAdoptDog: adoptDog,
   onAdoptCat: adoptCat,
-});
+};
 
 export default connect(
   mapStateToProps,
