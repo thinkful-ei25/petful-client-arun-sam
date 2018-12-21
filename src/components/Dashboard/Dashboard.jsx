@@ -34,12 +34,12 @@ export class Dashboard extends React.Component {
         </header>
         <main className="Dashboard__container">
           <div className="Dashboard__info">
-            <h3>About Us</h3>
+            <h2>About Us</h2>
             <p>
               Welcome to the Petful Pet Adoption Agency! We run a tight ship around here, but we love
               every pet that walks through the door. So long as they're a dog or cat, we'll take them and you can adopt them.
             </p>
-            <h3>Rules</h3>
+            <h2>Rules</h2>
             <ol>
               <li>Your only choice is between adopting a cat or a dog.</li>
               <li>You may not choose which dog or which cat you wish to take home.</li>
