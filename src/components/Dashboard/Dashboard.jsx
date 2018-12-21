@@ -30,7 +30,7 @@ export class Dashboard extends React.Component {
     return (
       <div>
         <header>
-          <h1>Petful Pet Adoption Agency</h1>
+          <h1 className="header">Petful Pet Adoption Agency</h1>
         </header>
         <main className="Dashboard__container">
           <div className="Dashboard__info">

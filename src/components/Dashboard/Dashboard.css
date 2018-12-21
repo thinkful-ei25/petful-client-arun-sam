@@ -1,6 +1,17 @@
 .Dashboard__container {
   display: flex;
   flex-flow: column nowrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.Dashboard__info {
+  margin: 20px;
 }
 
 @media screen and (min-width: 600px) {
