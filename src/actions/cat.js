@@ -17,7 +17,7 @@ const fetchCatFailure = (error) => ({
   error
 });
 
-export const fetchCat = (dispatch) => {
+export const fetchCat = () => (dispatch) => {
   dispatch(fetchCatRequest());
   return fetch(`${API_BASE_URL}/api/cat`)
     .then(res => res.json())
@@ -42,11 +42,11 @@ const adoptCatFailure = (error) => ({
   error
 });
 
-export const adoptCat = (dispatch) =>{
+export const adoptCat = () => (dispatch) => {
   dispatch(adoptCatRequest());
   return fetch(`${API_BASE_URL}/api/dog`, {
     method: 'DELETE'
   })
     .then(()=>dispatch(adoptCatSuccess()))
-    .then(()=>fetchCat());
+    .then(()=>dispatch(fetchCat()));
 };

@@ -37,13 +37,14 @@ export const fetchDog = () => (dispatch) => {
   dispatch(fetchDogRequest());
   return fetch(`${API_BASE_URL}/api/dog`)
     .then((res) => res.json())
-    .then((dog) => dispatch(fetchDogSuccess(dog)));
+    .then((dog) => dispatch(fetchDogSuccess(dog)))
+    .catch((error) => dispatch(fetchDogFailure(error)));
 };
 
 export const adoptDog = () => (dispatch) => {
   dispatch(adoptDogRequest());
-  return fetch(`${API_BASE_URL}/api/dog`, { METHOD: 'DELETE' }).then(() =>
-    dispatch(adoptDogSuccess())
-  )
-  .then(() => fetchDog());
+  return fetch(`${API_BASE_URL}/api/dog`, { METHOD: 'DELETE' })
+    .then(() => dispatch(adoptDogSuccess()))
+    .then(() => dispatch(fetchDog()))
+    .catch((error) => dispatch(adoptDogFailure(error)));
 };
