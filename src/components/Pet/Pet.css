@@ -1,0 +1,35 @@
+dd {
+  margin-left: 0;
+}
+
+.Pet {
+  padding: 15px;
+}
+
+.Pet__name {
+  text-align: center;
+}
+
+.Pet__image {
+  display: block;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.Pet__info--row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: flex-start;
+  border-bottom: 1px solid #ebebeb;
+  margin: 0 20px;
+  padding: 1ex 0;
+}
+
+.Pet__info--row:last-child {
+  border-bottom: none;
+}
+
+.Pet__info--category {
+  flex-basis: 25%;
+}
+

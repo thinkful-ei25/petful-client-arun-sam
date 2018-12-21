@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Pet.css';
+
 export default function Pet(props) {
   const { pet, onAdoptPet, loading, className } = props;
 
@@ -12,27 +14,37 @@ export default function Pet(props) {
   }
 
   return (
-    <section className={className}>
+    <section className={`${className} Pet`}>
       <header>
-        <h2>{pet.name}</h2>
-        <img src={pet.imageURL} alt={pet.imageDescription} />
+        <h2 className="Pet__name">{pet.name}</h2>
+        <img src={pet.imageURL} alt={pet.imageDescription} className="Pet__image" />
       </header>
       <div>
-        <dl>
-          <dt>Sex</dt>
-          <dd>{pet.sex}</dd>
+        <dl className="Pet__info">
+          <div className="Pet__info--row">
+            <dt className="Pet__info--category">Sex</dt>
+            <dd className="Pet__info--data">{pet.sex}</dd>
+          </div>
 
-          <dt>Age</dt>
-          <dd>{pet.age}</dd>
+          <div className="Pet__info--row">
+          <dt className="Pet__info--category">Age</dt>
+          <dd className="Pet__info--data">{pet.age}</dd>
+          </div>
 
-          <dt>Breed</dt>
-          <dd>{pet.breed}</dd>
+          <div className="Pet__info--row">
+          <dt className="Pet__info--category">Breed</dt>
+          <dd className="Pit__info--data">{pet.breed}</dd>
+          </div>
 
-          <dt>Story</dt>
-          <dd>{pet.story}</dd>
+          <div className="Pet__info--row">
+          <dt className="Pet__info--category">Story</dt>
+          <dd className="Pet__info--data">{pet.story}</dd>
+          </div>
         </dl>
 
-        <button type="button" onClick={onAdoptPet}>Adopt</button>
+        <button type="button" onClick={onAdoptPet} className="Pet__adoptButton">
+          Adopt
+        </button>
       </div>
     </section>
   );
