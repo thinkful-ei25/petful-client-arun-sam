@@ -15,25 +15,17 @@ export default function Pet(props) {
       </header>
       <div>
         <dl className="Pet__info">
-          <div className="Pet__info--row">
             <dt className="Pet__info--category">Sex</dt>
             <dd className="Pet__info--data">{pet.sex}</dd>
-          </div>
 
-          <div className="Pet__info--row">
             <dt className="Pet__info--category">Age</dt>
             <dd className="Pet__info--data">{pet.age}</dd>
-          </div>
 
-          <div className="Pet__info--row">
             <dt className="Pet__info--category">Breed</dt>
-            <dd className="Pit__info--data">{pet.breed}</dd>
-          </div>
+            <dd className="Pet__info--data">{pet.breed}</dd>
 
-          <div className="Pet__info--row">
             <dt className="Pet__info--category">Story</dt>
             <dd className="Pet__info--data">{pet.story}</dd>
-          </div>
         </dl>
 
         <button type="button" onClick={onAdoptPet} className="Pet__adoptButton">

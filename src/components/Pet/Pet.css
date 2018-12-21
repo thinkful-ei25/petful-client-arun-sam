@@ -16,21 +16,37 @@ dd {
   margin: 0 auto;
 }
 
-.Pet__info--row {
+.Pet__info {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-content: flex-start;
-  border-bottom: 1px solid #ebebeb;
   margin: 0 20px;
   padding: 1ex 0;
+  width: 100%;
 }
 
 .Pet__info--row:last-child {
   border-bottom: none;
 }
 
+.Pet__info--category,
+.Pet__info--data {
+  border-bottom: 1px solid #dddddd;
+  padding: 1ex 0;
+}
+
+.Pet__info--category:last-of-type,
+.Pet__info--data:last-of-type {
+  border-bottom: none;
+}
+
 .Pet__info--category {
-  flex-basis: 25%;
+  width: 25%;
+}
+
+.Pet__info--data {
+  width: 75%;
+  margin-left: auto;
 }
 
 .Pet__adoptButton {
