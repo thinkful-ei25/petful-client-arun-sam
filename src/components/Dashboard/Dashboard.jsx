@@ -49,8 +49,8 @@ export class Dashboard extends React.Component {
               <li>NO TARANTULAS!!! Not after the last incident...</li>
             </ol>
           </div>
-          <Pet pet={catToAdopt} loading={catLoading} onAdoptPet={onAdoptCat} className="Dashboard__pet"/>
-          <Pet pet={dogToAdopt} loading={dogLoading} onAdoptPet={onAdoptDog} className="Dashboard__pet"/>
+          <Pet pet={catToAdopt} loading={catLoading} onAdoptPet={onAdoptCat} className="Dashboard__pet" type="cat"/>
+          <Pet pet={dogToAdopt} loading={dogLoading} onAdoptPet={onAdoptDog} className="Dashboard__pet" type="dog"/>
         </main>
       </div>
     );

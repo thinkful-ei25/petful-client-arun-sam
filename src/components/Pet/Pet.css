@@ -47,3 +47,15 @@ dd {
   background: #616161;
   cursor: pointer;
 }
+
+.Pet__empty-pet {
+  display: block;
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .Pet__empty-pet {
+    position: relative;
+    top: 200px;
+  }
+}
