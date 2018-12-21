@@ -3,6 +3,10 @@ import React from 'react';
 export default function Pet(props) {
   const { pet, onAdoptPet } = props;
 
+  if (!pet) {
+    return null;
+  }
+
   return (
     <section>
       <header>
