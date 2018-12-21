@@ -9,6 +9,8 @@ import {
   adoptDog,
 } from '../../actions';
 
+import './Dashboard.css';
+
 export class Dashboard extends React.Component {
   componentDidMount() {
     const { fetchDog, fetchCat } = this.props;
@@ -26,10 +28,15 @@ export class Dashboard extends React.Component {
       catLoading,
     } = this.props;
     return (
-      <main>
-        <Pet pet={catToAdopt} loading={catLoading} onAdoptPet={onAdoptCat} />
-        <Pet pet={dogToAdopt} loading={dogLoading} onAdoptPet={onAdoptDog} />
-      </main>
+      <div>
+        <header>
+          <h1>Petful Pet Adoption Agency</h1>
+        </header>
+        <main className="Dashboard__container">
+          <Pet pet={catToAdopt} loading={catLoading} onAdoptPet={onAdoptCat} className="Dashboard__pet"/>
+          <Pet pet={dogToAdopt} loading={dogLoading} onAdoptPet={onAdoptDog} className="Dashboard__pet"/>
+        </main>
+      </div>
     );
   }
 }
