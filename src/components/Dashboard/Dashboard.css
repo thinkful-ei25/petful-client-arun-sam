@@ -1,0 +1,14 @@
+.Dashboard__container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+@media screen and (min-width: 600px) {
+  .Dashboard__container {
+    flex-flow: row wrap;
+  }
+
+  .Dashboard__pet {
+    width: 50%;
+  }
+}

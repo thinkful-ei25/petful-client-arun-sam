@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Pet(props) {
-  const { pet, onAdoptPet, loading } = props;
+  const { pet, onAdoptPet, loading, className } = props;
 
   if (loading) {
     return <section>Loading</section>;
@@ -12,7 +12,7 @@ export default function Pet(props) {
   }
 
   return (
-    <section>
+    <section className={className}>
       <header>
         <h2>{pet.name}</h2>
         <img src={pet.imageURL} alt={pet.imageDescription} />
