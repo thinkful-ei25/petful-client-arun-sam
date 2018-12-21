@@ -11,17 +11,24 @@ import {
 
 export class Dashboard extends React.Component {
   componentDidMount() {
-    const {fetchDog, fetchCat} = this.props;
+    const { fetchDog, fetchCat } = this.props;
     fetchDog();
     fetchCat();
   }
 
   render() {
-    const { catToAdopt, dogToAdopt, onAdoptDog, onAdoptCat } = this.props;
+    const {
+      catToAdopt,
+      dogToAdopt,
+      onAdoptDog,
+      onAdoptCat,
+      dogLoading,
+      catLoading,
+    } = this.props;
     return (
       <main>
-        <Pet pet={catToAdopt} onAdoptPet={onAdoptCat} />
-        <Pet pet={dogToAdopt} onAdoptPet={onAdoptDog} />
+        <Pet pet={catToAdopt} loading={catLoading} onAdoptPet={onAdoptCat} />
+        <Pet pet={dogToAdopt} loading={dogLoading} onAdoptPet={onAdoptDog} />
       </main>
     );
   }
@@ -30,6 +37,8 @@ export class Dashboard extends React.Component {
 const mapStateToProps = (state) => ({
   catToAdopt: state.cat.cat,
   dogToAdopt: state.dog.dog,
+  catLoading: state.cat.loading,
+  dogLoading: state.dog.loading,
 });
 
 const mapDispatchToProps = {

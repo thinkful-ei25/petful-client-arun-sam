@@ -1,7 +1,11 @@
 import React from 'react';
 
 export default function Pet(props) {
-  const { pet, onAdoptPet } = props;
+  const { pet, onAdoptPet, loading } = props;
+
+  if (loading) {
+    return <section>Loading</section>;
+  }
 
   if (!pet) {
     return null;
@@ -13,7 +17,7 @@ export default function Pet(props) {
         <h2>{pet.name}</h2>
         <img src={pet.imageURL} alt={pet.imageDescription} />
       </header>
-      <main>
+      <div>
         <dl>
           <dt>Sex</dt>
           <dd>{pet.sex}</dd>
@@ -29,7 +33,7 @@ export default function Pet(props) {
         </dl>
 
         <button type="button" onClick={onAdoptPet}>Adopt</button>
-      </main>
+      </div>
     </section>
   );
 }
