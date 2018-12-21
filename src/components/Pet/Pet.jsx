@@ -3,18 +3,12 @@ import React from 'react';
 import './Pet.css';
 
 export default function Pet(props) {
-  const { pet, onAdoptPet, loading, className } = props;
+  const { pet, onAdoptPet, loading, className, type } = props;
 
-  if (loading) {
-    return <section>Loading</section>;
-  }
+  const renderedLoading = loading ? <header>Loading</header> : null;
 
-  if (!pet) {
-    return null;
-  }
-
-  return (
-    <section className={`${className} Pet`}>
+  const renderedPet = pet ? (
+    <div>
       <header>
         <h2 className="Pet__name">{pet.name}</h2>
         <img src={pet.imageURL} alt={pet.imageDescription} className="Pet__image" />
@@ -27,18 +21,18 @@ export default function Pet(props) {
           </div>
 
           <div className="Pet__info--row">
-          <dt className="Pet__info--category">Age</dt>
-          <dd className="Pet__info--data">{pet.age}</dd>
+            <dt className="Pet__info--category">Age</dt>
+            <dd className="Pet__info--data">{pet.age}</dd>
           </div>
 
           <div className="Pet__info--row">
-          <dt className="Pet__info--category">Breed</dt>
-          <dd className="Pit__info--data">{pet.breed}</dd>
+            <dt className="Pet__info--category">Breed</dt>
+            <dd className="Pit__info--data">{pet.breed}</dd>
           </div>
 
           <div className="Pet__info--row">
-          <dt className="Pet__info--category">Story</dt>
-          <dd className="Pet__info--data">{pet.story}</dd>
+            <dt className="Pet__info--category">Story</dt>
+            <dd className="Pet__info--data">{pet.story}</dd>
           </div>
         </dl>
 
@@ -46,6 +40,18 @@ export default function Pet(props) {
           Adopt
         </button>
       </div>
+    </div>
+  ) : (
+    <aside className="Pet__empty-pet">
+      There are currently no {type}s awaiting adoption
+    </aside>
+  );
+
+  const render = (
+    <section className={`${className} Pet`}>
+      {renderedLoading}
+      {renderedPet}
     </section>
   );
+  return render;
 }

@@ -33,3 +33,29 @@ dd {
   flex-basis: 25%;
 }
 
+.Pet__adoptButton {
+  display: block;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: #3a3a3a;
+  color: white;
+  font-size: inherit;
+}
+
+.Pet__adoptButton:hover {
+  background: #616161;
+  cursor: pointer;
+}
+
+.Pet__empty-pet {
+  display: block;
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .Pet__empty-pet {
+    position: relative;
+    top: 200px;
+  }
+}
